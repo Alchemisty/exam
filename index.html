@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>GHSS</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 20px;
+    background-color: #f8f8f8;
+}
+
+h2 {
+    color: #333;
+}
+
+code {
+    display: block;
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+    code {
+        font-size: 12px;
+    }
+    button {
+        padding: 8px 12px;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <div>
+        <h2>1.Day of the Week Code</h2>
+        <code id="dayOfWeekCode">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            <br>
+            int main() {<br>
+                &emsp;int dayNumber;<br>
+                &emsp;cout &lt;&lt; "Input a number (1-7) to display the corresponding day of the week: ";<br>
+                &emsp;cin &gt;&gt; dayNumber;<br>
+                <br>
+                &emsp;switch (dayNumber) {<br>
+                    &emsp;&emsp;case 1: cout &lt;&lt; "Sunday"; break;<br>
+                    &emsp;&emsp;case 2: cout &lt;&lt; "Monday"; break;<br>
+                    &emsp;&emsp;case 3: cout &lt;&lt; "Tuesday"; break;<br>
+                    &emsp;&emsp;case 4: cout &lt;&lt; "Wednesday"; break;<br>
+                    &emsp;&emsp;case 5: cout &lt;&lt; "Thursday"; break;<br>
+                    &emsp;&emsp;case 6: cout &lt;&lt; "Friday"; break;<br>
+                    &emsp;&emsp;case 7: cout &lt;&lt; "Saturday"; break;<br>
+                    &emsp;&emsp;default: cout &lt;&lt; "Invalid input";<br>
+                &emsp;}<br>
+                <br>
+                &emsp;return 0;<br>
+            }
+        </code>
+        <button onclick="copyCode('dayOfWeekCode')">Copy Code</button>
+    </div>
+
+    <div>
+        <h2>2.Sum of Natural Numbers Code</h2>
+        <code id="sumOfNaturalNumbersCode">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            <br>
+            int main() {<br>
+                &emsp;int n;<br>
+                &emsp;cout &lt;&lt; "Enter a positive integer (n): ";<br>
+                &emsp;cin &gt;&gt; n;<br>
+                <br>
+                &emsp;int sum = 0;<br>
+                &emsp;for (int i = 1; i &lt;= n; i++) {<br>
+                    &emsp;&emsp;sum += i;<br>
+                &emsp;}<br>
+                <br>
+                &emsp;cout &lt;&lt; "The sum of the first " &lt;&lt; n &lt;&lt; " natural numbers is: " &lt;&lt; sum;<br>
+                <br>
+                &emsp;return 0;<br>
+            }
+        </code>
+        <button onclick="copyCode('sumOfNaturalNumbersCode')">Copy Code</button>
+    </div>
+
+    <div>
+        <h2>3.Palindrome Check Code</h2>
+        <code id="palindromeCheckCode">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            <br>
+            int main() {<br>
+                &emsp;int n, num, digit, rev = 0;<br>
+                &emsp;cout &lt;&lt; "Enter a positive number: ";<br>
+                &emsp;cin &gt;&gt; num;<br>
+                <br>
+                &emsp;n = num;<br>
+                &emsp;while (num > 0) {<br>
+                    &emsp;&emsp;digit = num % 10;<br>
+                    &emsp;&emsp;rev = (rev * 10) + digit;<br>
+                    &emsp;&emsp;num = num / 10;<br>
+                &emsp;}<br>
+                <br>
+                &emsp;cout &lt;&lt; "The reverse of the number is: " &lt;&lt; rev;<br>
+                <br>
+                &emsp;if (n == rev)<br>
+                    &emsp;&emsp;cout &lt;&lt; "\nThe number is a palindrome.";<br>
+                &emsp;else<br>
+                    &emsp;&emsp;cout &lt;&lt; "\nThe number is not a palindrome.";<br>
+                <br>
+                &emsp;return 0;<br>
+            }
+        </code>
+        <button onclick="copyCode('palindromeCheckCode')">Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard!');
+        }
+    </script>
+    <div>
+        <h2>4.Value Swap Code</h2>
+        <code id="valueSwapCode">
+            #include &lt;iostream&gt;<br>
+            using namespace std;<br>
+            <br>
+            void swap(int *x, int *y) {<br>
+                &emsp;int t;<br>
+                &emsp;t = *x;<br>
+                &emsp;*x = *y;<br>
+                &emsp;*y = t;<br>
+            }<br>
+            <br>
+            int main() {<br>
+                &emsp;int a, b;<br>
+                <br>
+                &emsp;cout &lt;&lt; "Enter the values of a and b: ";<br>
+                &emsp;cin &gt;&gt; a &gt;&gt; b;<br>
+                <br>
+                &emsp;cout &lt;&lt; "\nBefore Swap\n";<br>
+                &emsp;cout &lt;&lt; "a=" &lt;&lt; a &lt;&lt; "\tb=" &lt;&lt; b;<br>
+                <br>
+                &emsp;swap(&a, &b);<br>
+                <br>
+                &emsp;cout &lt;&lt; "\nAfter Swap\n";<br>
+                &emsp;cout &lt;&lt; "a=" &lt;&lt; a &lt;&lt; "\tb=" &lt;&lt; b;<br>
+                <br>
+                &emsp;return 0;<br>
+            }
+        </code>
+        <button onclick="copyCode('valueSwapCode')">Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard!');
+        }
+    </script>
+
+</body>
+</html>
