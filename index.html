@@ -192,6 +192,42 @@ button:hover {
             alert('Code copied to clipboard!');
         }
     </script>
+    <div>
+        <h2>Sum of Digits Code</h2>
+        <code id="sumOfDigitsCode">
+            #include &lt;iostream&gt;<br>
+            <br>
+            int main() {<br>
+                &emsp;int number;<br>
+                &emsp;cout &lt;&lt; "Enter a number: ";<br>
+                &emsp;cin &gt;&gt; number;<br>
+                <br>
+                &emsp;int sum = 0;<br>
+                &emsp;while (number != 0) {<br>
+                    &emsp;&emsp;sum += number % 10;<br>
+                    &emsp;&emsp;number /= 10;<br>
+                &emsp;}<br>
+                <br>
+                &emsp;cout &lt;&lt; "Sum of digits: " &lt;&lt; sum &lt;&lt; std::endl;<br>
+                <br>
+                &emsp;return 0;<br>
+            }
+        </code>
+        <button onclick="copyCode('sumOfDigitsCode')">Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode(codeId) {
+            const codeElement = document.getElementById(codeId);
+            const textArea = document.createElement('textarea');
+            textArea.value = codeElement.innerText;
+            document.body.appendChild(textArea);
+            textArea.select();
+            document.execCommand('copy');
+            document.body.removeChild(textArea);
+            alert('Code copied to clipboard!');
+        }
+    </script>
 
 </body>
 </html>
